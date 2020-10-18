@@ -25,27 +25,7 @@ public class PostService {
 		return obj.orElseThrow( () -> new ObjectNotFoundException("Post não encontrado") );
 	}
 	
-	public Post insert(Post user) {
-		return repo.save(user);
-	}
-	
-//	public Post fromDTO(PostDTO objDto) {
-//		return new Post(objDto.getId(), objDto.getName(), objDto.getEmail());
-//	}
-	
-	public void delete(String id) {
-		findById(id);
-		repo.deleteById(id);
-	}
-	
-	public Post updatePost(Post user) {
-		Post newPost = findById(user.getId());
-		updateData(user, newPost);
-		return repo.save(newPost);
-	}
-
-	private void updateData(Post user, Post newPost) {
-//		newPost.setName(user.getName());
-//		newPost.setEmail(user.getEmail());
+	public List<Post> findByTitle(String text){
+		return repo.findByTitleContainingIgnoreCase(text);
 	}
 }

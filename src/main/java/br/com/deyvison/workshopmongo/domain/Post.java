@@ -18,7 +18,7 @@ public class Post implements Serializable{
 	@Id
 	private String id;
 	private Date date;
-	private String ttitle;
+	private String title;
 	private String body;
 	private AuthorDTO author;
 	
@@ -32,7 +32,7 @@ public class Post implements Serializable{
 		super();
 		this.id = id;
 		this.date = date;
-		this.ttitle = ttitle;
+		this.title = ttitle;
 		this.body = body;
 		this.author = author;
 	}
@@ -54,11 +54,11 @@ public class Post implements Serializable{
 	}
 
 	public String getTtitle() {
-		return ttitle;
+		return title;
 	}
 
 	public void setTtitle(String ttitle) {
-		this.ttitle = ttitle;
+		this.title = ttitle;
 	}
 
 	public String getBody() {
@@ -89,7 +89,7 @@ public class Post implements Serializable{
 		result = prime * result + ((body == null) ? 0 : body.hashCode());
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((ttitle == null) ? 0 : ttitle.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
 
@@ -122,10 +122,10 @@ public class Post implements Serializable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (ttitle == null) {
-			if (other.ttitle != null)
+		if (title == null) {
+			if (other.title != null)
 				return false;
-		} else if (!ttitle.equals(other.ttitle))
+		} else if (!title.equals(other.title))
 			return false;
 		return true;
 	}
