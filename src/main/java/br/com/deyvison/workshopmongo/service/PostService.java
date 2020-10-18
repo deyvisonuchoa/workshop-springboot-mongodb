@@ -22,7 +22,7 @@ public class PostService {
 	
 	public Post findById(String id) {
 		Optional<Post> obj = repo.findById(id);
-		return obj.orElseThrow( () -> new ObjectNotFoundException("Usuario não encontrado") );
+		return obj.orElseThrow( () -> new ObjectNotFoundException("Post não encontrado") );
 	}
 	
 	public Post insert(Post user) {
